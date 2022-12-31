@@ -3,7 +3,7 @@
 /*=============== VARIABLES CSS ===============*/
 :root {
     --header-height: 3rem;
-  
+
     /*========== Colors ==========*/
     /*Color mode HSL(hue, saturation, lightness)*/
     --hue: 0;
@@ -13,10 +13,10 @@
     --text-color: hsl(var(--hue), var(--sat), 46%);
     --body-color: hsl(var(--hue), var(--sat), 95%);
     --container-color: #fff;
-  
+
     /*========== Font and typography ==========*/
     --body-font: "Poppins", sans-serif;
-  
+
     /*.5rem = 8px | 1rem = 16px ...*/
     --big-font-size: 3rem;
     --h1-font-size: 2.25rem;
@@ -26,12 +26,12 @@
     --small-font-size: 0.875rem;
     --smaller-font-size: 0.813rem;
     --tiny-font-size: 0.625rem;
-  
+
     /*========== Font weight ==========*/
     --font-normal: 400;
     --font-medium: 500;
     --font-semi-bold: 600;
-  
+
     /*========== Margenes Bottom ==========*/
     /*.5rem = 8px | 1rem = 16px ...*/
     --mb-0-25: 0.25rem;
@@ -42,7 +42,7 @@
     --mb-2: 2rem;
     --mb-2-5: 2.5rem;
     --mb-3: 3rem;
-  
+
     /*========== z index ==========*/
     --z-tooltip: 10;
     --z-fixed: 100;
@@ -67,11 +67,11 @@
     padding: 0;
     box-sizing: border-box;
 }
-  
+
 html {
     scroll-behavior: smooth;
 }
-  
+
   body,
   button,
   input,
@@ -79,33 +79,33 @@ html {
     font-family: var(--body-font);
     font-size: var(--normal-font-size);
 }
-  
+
 body {
     background-color: var(--body-color);
     color: var(--text-color);
 }
-  
+
   h1,
   h2,
   h3 {
     color: var(--title-color);
     font-weight: var(--font-semi-bold);
 }
-  
+
   ul {
     list-style: none;
 }
-  
+
   a {
     text-decoration: none;
 }
-  
+
   button {
     cursor: pointer;
     border: none;
     outline: none;
 }
-  
+
   img {
     max-width: 100%;
     height: auto;
@@ -114,18 +114,18 @@ body {
 .section {
     padding: 6rem 0 2rem;
 }
-  
+
   .section__title {
     font-size: var(--h1-font-size);
     color: var(--title-color);
 }
-  
+
   .section__subtitle {
     display: block;
     font-size: var(--small-font-size);
     margin-bottom: 4rem;
 }
-  
+
   .section__title,
   .section__subtitle {
     text-align: center;
@@ -149,15 +149,15 @@ body {
     border-radius: 1rem;
     font-weight: var(--font-medium);
 }
-  
+
   .button:hover {
     background-color: var(--title-color-dark);
 }
-  
+
   .button__icon {
     margin-left: var(--mb-0-5);
 }
-  
+
   .button--flex {
     display: inline-flex;
     align-items: center;
@@ -207,7 +207,7 @@ body {
 .nav-link:hover {
     color: var(--title-color-dark);
 }
-@media screen and (max-width:768px) 
+@media screen and (max-width:768px)
 {
     .header {
         top: initial;
@@ -526,7 +526,7 @@ body {
 }
 @media screen and (max-width:992px)
 {
-    
+
 }
 /* Medium Devices */
 @media screen and (max-width:768px)
@@ -581,6 +581,58 @@ table {
 .predict__card-icon {
     color: red;
 }
+.predict__modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: var(--z-modal);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    opacity: 1;
+    visibility: hidden;
+    transition: .2s;
+}
+.predict__modal-content {
+    width: 500px;
+    position: relative;
+    background-color: var(--container-color);
+    padding: 1rem 2.5rem 2.5rem;
+    border-radius: .5rem;
+}
+.predict__modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1rem;
+    color: var(--title-color);
+    cursor: pointer;
+}
+.predict__modal-title {
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
+    margin-bottom: var(--mb-1);
+}
+.active-modal {
+    opacity: 1;
+    visibility: visible;
+}
+.btn {
+    background-color: rgb(13, 190, 13);
+    padding: .3rem 1rem;
+    color: white;
+    border-radius: .5rem;
+    margin-top: 1.5rem;
+    float: right;
+    box-shadow: 0 2px 4px rgb(0 0 0/20%);
+}
+.btn:hover {
+    background-color: rgb(6, 138, 6);
+}
 /* Medium Devices */
 @media screen and (max-width:768px)
 {
@@ -599,6 +651,9 @@ table {
     }
     .predict__card {
         font-size: 8pt;
+    }
+    .predict__modal-content {
+        width: 300px;
     }
 }
 /* Smaller Devices */
@@ -629,11 +684,11 @@ table {
         margin-left: var(--mb-1-5);
         margin-right: var(--mb-1-5);
     }
-    
+
     .button {
         padding: 1rem 1.75rem;
     }
-    
+
     .button__icon {
         width: 22px;
         height: 22px;

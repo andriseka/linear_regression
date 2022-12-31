@@ -245,9 +245,20 @@
                         system that has been made. So that users can understand the reason for
                         making this system.
                     </p>
-                    <a href="https://docs.google.com/presentation/d/1rkPf6usK7-aHN3IstVXONvSClZE8KxDk/edit?usp=sharing&ouid=100631256416131361658&rtpof=true&sd=true" class="presentation__button button button--flex" target="_blank">
+                    <a href="javascript:void(0)" class="presentation__button button button--flex" onclick="predictModal()">
                         Import data <i class="uil uil-import presentation__button-icon"></i>
                     </a>
+                </div>
+                {{-- Modal Import --}}
+                <div class="predict__modal" id="modal-show">
+                    <div class="predict__modal-content">
+                        <i class="uil uil-times predict__modal-close" onclick="modalHide()"></i>
+                        <h3 class="predict__modal-title">Import Data Saham</h3>
+                        <form action="">
+                            <input type="file" name="file">
+                            <button type="submit" class="btn">Import</button>
+                        </form>
+                    </div>
                 </div>
             </div>
             <div class="presentation__container container">
