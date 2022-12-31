@@ -633,6 +633,9 @@ table {
 .btn:hover {
     background-color: rgb(6, 138, 6);
 }
+.oke {
+    background-color: #fff;
+}
 /* Medium Devices */
 @media screen and (max-width:768px)
 {
