@@ -34,7 +34,7 @@
                                             </div>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="submit" class="btn btn-success">Import</button>
+                                            <button type="submit" class="btn btn-success" data-bs-dismiss="modal" aria-label="Close">Import</button>
                                         </div>
                                     </form>
                                 </div>

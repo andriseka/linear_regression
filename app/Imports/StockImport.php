@@ -17,6 +17,25 @@ class StockImport implements ToModel, WithHeadingRow, WithChunkReading, ShouldQu
     */
     public function model(array $row)
     {
+        if ($row['open'] == 'null') {
+            $row['open'] = 0;
+        }
+        if ($row['high'] == 'null') {
+            $row['high'] = 0;
+        }
+        if ($row['low'] == 'null') {
+            $row['low'] = 0;
+        }
+        if ($row['close'] == 'null') {
+            $row['close'] = 0;
+        }
+        if ($row['adj_close'] == 'null') {
+            $row['adj_close'] = 0;
+        }
+        if ($row['volume'] == 'null') {
+            $row['volume'] = 0;
+        }
+
         return new Stock([
             'date' => $row['date'],
             'open' => $row['open'],
