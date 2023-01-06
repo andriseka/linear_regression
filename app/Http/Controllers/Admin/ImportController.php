@@ -7,6 +7,7 @@ use App\Imports\StockImport;
 use App\Models\Stock;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ImportController extends Controller
 {
@@ -25,8 +26,17 @@ class ImportController extends Controller
 
             Excel::queueImport(new StockImport, $file);
 
+            Alert::success('Notifikasi', 'Data berhasil di import');
             return back();
 
         }
+    }
+
+    public function destroy()
+    {
+        $destroy = Stock::truncate();
+        
+        Alert::success('Notifikasi', 'Data berhasil di hapus');
+        return back();
     }
 }

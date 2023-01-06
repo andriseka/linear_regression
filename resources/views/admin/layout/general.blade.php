@@ -10,6 +10,8 @@
     </head>
     <body >
         <div class="page">
+            @include('sweetalert::alert')
+
             @include('admin.layout.sidebar')
             @include('admin.layout.header')
             <div class="page-wrapper">

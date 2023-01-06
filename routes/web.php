@@ -27,4 +27,5 @@ Route::middleware(['auth'])->group(function() {
     // Import Data
     Route::get('/import-data', [ImportController::class, 'index'])->name('import');
     Route::post('/import-data/store', [ImportController::class, 'import'])->name('import.store');
+    Route::delete('/import-data/destroy', [ImportController::class, 'destroy'])->name('import.destroy');
 });
