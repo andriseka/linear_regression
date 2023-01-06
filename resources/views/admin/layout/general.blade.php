@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
         <title>Dashboard - Admin</title>
         <!-- CSS files -->
-        <link href="{{asset('assets/dist/css/tabler.min.css')}}" rel="stylesheet"/>
+        <link href="{{asset('assets/dist/css/tabler.css')}}" rel="stylesheet"/>
         <link href="{{asset('assets/dist/css/tabler-vendors.min.css')}}" rel="stylesheet"/>
     </head>
     <body >
@@ -16,6 +16,9 @@
                 <div class="page-body">
                     <div class="container-xl">
                       <div class="row row-deck row-cards">
+                        <div class="col-md-12 mb-3">
+                            <h1>@yield('title')</h1>
+                        </div>
                         @yield('content')
                       </div>
                     </div>

@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Admin\ImportController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -16,14 +16,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/login', [AuthController::class, 'login'])->name('login');
-
 Auth::routes();
 
+Route::get('/', function() {
+    return view('auth.login');
+});
 Route::middleware(['auth'])->group(function() {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    // Import Data
+    Route::get('/import-data', [ImportController::class, 'index'])->name('import');
+    Route::post('/import-data/store', [ImportController::class, 'import'])->name('import.store');
 });
